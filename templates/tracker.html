@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/tracker.css') }}">
+    <title>Tracker</title>
+</head>
+<body>
+    <div class="main">
+        <div class="row1">
+            {% for tracker in trackers %}
+            {% if loop.index == 1 %}
+                <h1 style="text-align: center;">{{tracker["Tracker"]}}</h1>
+            {% endif %}
+            {% endfor %}
+            <a href='/dashboard'>Back</a>
+        </div>
+        <div style="display: flex; justify-content: center; margin-top: 15px;"> 
+            <img src="../static/graph.png">
+        </div>
+        <div class="trackerlogs">
+            {% for tracker in trackers %}
+            <div class="inditrackers">
+                <div class="first4">
+                    <h3>{{tracker["Tracker_id"]}}</h3>
+                    <p>{{tracker["Last_Tracked"]}}</p>
+                    <p>{{tracker["Description"]}}</p>
+                    <p>{{tracker["Value"]}}</p>
+                </div>
+                <div class="last2">
+                    <a href='/edit_tracker/{{tracker["Tracker"]}}/{{tracker["Last_Tracked"]}}'>Edit Log</a>
+                    <a href='/delete_tracker/{{tracker["Tracker"]}}/{{tracker["Last_Tracked"]}}'>Delete Log</a>
+                    <br/>
+                </div>
+            </div>
+            {% endfor %} 
+            {% for tracker in trackers %}
+                {% if loop.index == 1 %}
+                    <br/>
+                    <div class="log">
+                        <a href='/addtracker/{{tracker["Tracker"]}}'>Log {{tracker["Tracker"]}}</a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

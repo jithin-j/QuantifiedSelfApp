@@ -1,0 +1,42 @@
+h1 {
+  text-align: center;
+  margin: 0%;
+}
+.row1 {
+  background-image: linear-gradient(
+    to right top,
+    #021776,
+    #004fa5,
+    #0083c7,
+    #40b6e1,
+    #94e9fa
+  );
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  color: white;
+}
+body {
+  margin: 0%;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 5px;
+  width: fit-content;
+  border-style: solid;
+  justify-content: center;
+  align-items: center;
+}
+.form-element {
+  margin: 15px;
+}
+.form-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

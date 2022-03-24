@@ -1,0 +1,49 @@
+.row1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  background-image: linear-gradient(
+    to right top,
+    #021776,
+    #004fa5,
+    #0083c7,
+    #40b6e1,
+    #94e9fa
+  );
+  margin: 0%;
+  color: white;
+  font-size: 20px;
+}
+body {
+  margin: 0%;
+}
+.trackerlogs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.inditrackers {
+  display: flex;
+  flex-direction: row;
+  border-style: solid;
+  gap: 100px;
+  align-items: center;
+  justify-content: center;
+  width: 45%;
+  margin-top: 5px;
+}
+.first4 {
+  display: flex;
+  flex-direction: column;
+  margin: 0%;
+}
+.first4 > p {
+  margin: 0%;
+}
+.log {
+  font-size: 25px;
+}

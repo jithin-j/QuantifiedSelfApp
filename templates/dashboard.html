@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/dashboard.css') }}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="main">
+        <div class="row1">
+            <h1>Hello {{user}}!</h1>
+            <a href="{{url_for('logout')}}">Click here to log out</a>
+        </div>
+        <div class="row2">
+            <div class="heading">
+                <p>Trackers</p>
+                <p>Actions</p>
+            </div>
+            {% for tracker in trackers %}
+                <div class="trackers">
+                    <a href='/tracker/{{tracker["Tracker"]}}'>{{tracker["Tracker"]}}</a>
+                    <a href='/addtracker/{{tracker["Tracker"]}}'>Log Tracker</a>
+                    <a href='/delete/{{tracker["Tracker"]}}'>Delete Tracker</a>
+                </div>    
+                <br>
+            {% endfor %}
+            <a href="{{url_for('addNewTracker')}}">Add new Tracker</a>
+        </div>
+    </div>
+</body>
+</html>

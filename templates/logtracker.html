@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/logtracker.css') }}">
+    <title>Create Tracker</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="row1">
+            <h1>Log {{trackername}} Tracker Page</h1>
+        </div>
+        <div class="form">
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                {{ form.Tracker_id }}
+                {{ form.Description }}
+                {%if data.tracker_type == 'choice'%}
+                    <select name="value" id="">
+                        {%if opts%}
+                            {%for opt in opts%}
+                                <option value="{{opt}}">{{opt}}</option>
+                                {{form.Value}}
+                            {%endfor%}
+                        {%endif%}
+                    </select>
+                {% else %}
+                    <input type="text" name="value" placeholder="Value">
+                {% endif %}
+                {{ form.submit }}
+            </form>
+        </div>
+        <br>
+    </div>
+
+</html>

@@ -1,0 +1,30 @@
+body {
+  background-image: linear-gradient(
+    to right top,
+    #021776,
+    #004fa5,
+    #0083c7,
+    #40b6e1,
+    #94e9fa
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+h1 {
+  text-align: center;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-left: 25%;
+  margin-top: 300px;
+  margin-right: 25%;
+  height: 200px;
+}
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

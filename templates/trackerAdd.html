@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/trackerAdd.css') }}">
+    <title>Create Tracker</title>
+</head>
+<body>
+    <div class="main">
+        <div class="row1">
+            <h1>Create Tracker Page</h1>
+        </div>
+        <div class="form-box">
+            <div class="form">
+                <form method="POST" action="">
+                    <div class="form-element">{{ form.hidden_tag() }}</div>
+                    <div class="form-element">{{ form.Tracker }}</div>
+                    <div class="form-element">{{ form.Tracker_id }}</div>
+                    <div class="form-element">{{ form.Description }}</div>
+                    <div class="form-element">{{ form.Value }}</div>
+                    <div class="form-element">
+                        <label for="type" class="lab-type">Type</label>
+                        <select name="type" id="">
+                            <option value="string">String</option>
+                            <option value="numerical">Numerical</option>
+                            <option value="choice">Multiple Choice</option>
+                        </select>
+                    </div>
+                    <div class="form-element">
+                        <label for="settings" class="lab-settings">Settings</label>
+                        <input type="text" name="choices" id="" placeholder="Choices for multiple choice sep by comma...">
+                    </div>
+                    <div class="form-element">{{ form.submit }}</div>
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+</html>
